@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>eCampus - Result Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #00a86b, #007bff);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .top-banner {
+      background: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .top-banner img {
+      max-height: 80px;
+    }
+    .login-box {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    .card h3 {
+      color: green;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00a86b;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #007bff;
+    }
+    .result {
+      margin-top: 20px;
+      color: red;
+      font-size: 18px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-banner">
+    <img src="https://ecampus.cc/HICET/image/Onlineapplication.jpg" alt="College Logo">
+  </div>
+  <div class="login-box">
+    <div class="card">
+      <h3>LOGIN TO YOUR ACCOUNT</h3>
+      <input type="text" placeholder="Enter Register Number" id="roll" />
+      <input type="text" placeholder="dd/mm/yyyy" id="dob" />
+      <button onclick="showResult()">🔒 Sign in</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function showResult() {
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = 'Loading your result... Please wait ⏳';
+      setTimeout(() => {
+        resultDiv.innerHTML = `
+          <h3 style="color:red;">Result Delayed!</h3>
+          <p>Go and Study, Idiotsss 😈</p>
+          <p>ipadi suspense'la saaavu 🤣</p>
+        `;
+      }, 30000); // 30 seconds
+    }
+  </script>
+</body>
+</html>
